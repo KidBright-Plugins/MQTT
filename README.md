@@ -21,3 +21,6 @@ This block must be placed after the connection block.
 ### Publish a message to a specified topic
 ![Optional Text](../master/docs/images/pub.png)
 The block takes two arguments as inputs, first the message to be publised, and the topic, both must be a string.
+
+This block should be used in the Forever block.
+![Optional Text](../master/docs/images/forever_pub.png)
