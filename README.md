@@ -6,7 +6,7 @@ This is a plugin used with the KidBright board for the MQTT.
  - Subscribe to a specified topic
  - Unsubscribe to a specified topic
  - Publish a message to a specified topic
- - Get a message from subscribed topcs
+ - Get a message from subscribed topics
 ### Connect to a MQTT server
 ![Optional Text](../master/docs/images/connect.png)
 
