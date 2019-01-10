@@ -23,3 +23,5 @@ Blockly.Msg.MQTT_PUB_HELPURL = "";
 Blockly.Msg.MQTT_STOP_TITLE = "Stop MQTT LED";
 Blockly.Msg.MQTT_STOP_TOOLTIP = "Stop MQTT LED";
 Blockly.Msg.MQTT_STOP_HELPURL = "";
+
+Blockly.Msg.MQTT_MESSAGE_TITLE = "Get a message from subscribed topic";

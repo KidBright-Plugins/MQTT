@@ -26,6 +26,7 @@
 
 static const char *TAG = "MQTT_EXAMPLE";
 
+Message MQTT::message = {nullptr, nullptr};
 QueueTopic MQTT::sub_topic = {nullptr, nullptr};
 State MQTT::state = none;
 esp_mqtt_client_handle_t MQTT::client = NULL;
@@ -91,8 +92,13 @@ static esp_err_t mqtt_event_handler(esp_mqtt_event_handle_t event)
         	/*
             ESP_LOGI(TAG, "MQTT_EVENT_DATA");
             */
+        	char buffer_topic[64];
+        	char buffer_data[64];
+        	sprintf(buffer_topic, "%.*s", event->topic_len, event->topic);
+        	sprintf(buffer_data, "%.*s", event->data_len, event->data);
             printf("TOPIC=%.*s\r\n", event->topic_len, event->topic);
             printf("DATA=%.*s\r\n", event->data_len, event->data);
+            MQTT::message = {buffer_topic, buffer_data};
             break;
 
         case MQTT_EVENT_ERROR:
@@ -234,4 +240,9 @@ void MQTT::publish(char *topic, char *data, int len, int qos, int retain) {
 		printf("BLOCKLY PUB\n");
 		esp_mqtt_client_publish(this->client, topic, data, len, qos, retain);
 	}
+}
+
+char MQTT::getMessage() const {
+	printf("GET MESSAGE %s\n", MQTT::message.data);
+	return MQTT::message.data;
 }

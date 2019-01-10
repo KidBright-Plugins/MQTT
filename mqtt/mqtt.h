@@ -19,6 +19,11 @@ enum State {
 	data,
 };
 
+struct Message{
+    char *topic;
+    char *data;
+};
+
 struct Topic{
 	char *topic;
 	int qos;
@@ -36,6 +41,8 @@ class MQTT : public Device {
         esp_mqtt_client_config_t mqtt_cfg;
 
 	public:
+
+        static Message message;
 	    static QueueTopic sub_topic;    // Subscribing topic queue
 		static State state;				// MQTT state
         static esp_mqtt_client_handle_t client;	// MQTT client
@@ -60,6 +67,7 @@ class MQTT : public Device {
         void subscribe(char *topic, int qos=0);
         void unsubscribe(char *topic);
         void publish(char *topic, char *data, int len=0, int qos=0, int retain=0);
+        char* getMessage() const ;
 };
 
 #endif

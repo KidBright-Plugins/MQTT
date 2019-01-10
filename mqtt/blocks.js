@@ -96,3 +96,16 @@ Blockly.Blocks['mqtt_pub'] = {
       this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['mqtt_message'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField(Blockly.Msg.MQTT_MESSAGE_TITLE);
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(230);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
