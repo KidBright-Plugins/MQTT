@@ -10,7 +10,7 @@ This is a plugin used with the KidBright board for the MQTT.
 ### Connect to a MQTT server
 ![Optional Text](../master/docs/images/connect.png)
 
-The block takes one argument which is a string of MQTT server
+The block takes one argument which is a string of MQTT host
 
 ### Subscribe to a specified topic
 ![Optional Text](../master/docs/images/sub.png)
