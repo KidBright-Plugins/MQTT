@@ -86,7 +86,7 @@ Blockly.Blocks['mqtt_pub'] = {
       this.appendDummyInput()
           .appendField(Blockly.Msg.MQTT_PUB_TITLE_2);
       this.appendValueInput("topic")
-          .setCheck("String")
+          .setCheck("Number")
           .appendField(Blockly.Msg.MQTT_TOPIC);
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
@@ -102,10 +102,9 @@ Blockly.Blocks['mqtt_message'] = {
         this.appendDummyInput()
             .appendField(Blockly.Msg.MQTT_MESSAGE_TITLE);
         this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
+        this.setOutput(true, null);
         this.setColour(230);
-        this.setTooltip("");
-        this.setHelpUrl("");
+        this.setTooltip(Blockly.Msg.MQTT_MESSAGE_TOOLTIP);
+        this.setHelpUrl(Blockly.Msg.MQTT_CONNECT_HELPURL);
     }
 };
