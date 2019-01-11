@@ -21,7 +21,7 @@ enum State {
 
 struct Message{
     char *topic;
-    char *data;
+    double data;
 };
 
 struct Topic{
@@ -67,7 +67,8 @@ class MQTT : public Device {
         void subscribe(char *topic, int qos=0);
         void unsubscribe(char *topic);
         void publish(char *topic, char *data, int len=0, int qos=0, int retain=0);
-        char* getMessage() const ;
+        void publish(char *topic, double &data, int len=0, int qos=0, int retain=0);
+        double getMessage() const ;
 };
 
 #endif

@@ -24,11 +24,12 @@ Blockly.JavaScript['mqtt_stop'] = function(block) {
 
 Blockly.JavaScript['mqtt_pub'] = function(block) {
   var value_msg = Blockly.JavaScript.valueToCode(block, 'msg', Blockly.JavaScript.ORDER_ATOMIC);
+  value_msg = value_msg.toString();
   var value_topic = Blockly.JavaScript.valueToCode(block, 'topic', Blockly.JavaScript.ORDER_ATOMIC);
-  return `DEV_IO.MQTT().publish(${value_topic}, ${value_msg.toString()});\n`;
+  return `DEV_IO.MQTT().publish(${value_topic}, ${value_msg});\n`;
 };
 
 Blockly.JavaScript['mqtt_message'] = function(block) {
-  return `DEV_IO.MQTT().getMessage();\n`;
+  return [`DEV_IO.MQTT().getMessage()`];
 };
 
