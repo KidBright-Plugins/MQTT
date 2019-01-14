@@ -1,4 +1,4 @@
-# KidBright MQTT Plug-in
+# KidBright MQTT Plugin
 This is a plugin used with the KidBright board for the MQTT.
 
 ## Blocks
